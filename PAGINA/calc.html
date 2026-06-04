@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Calculadora Ley de Ohm</title>
+    <link rel="stylesheet" type="text/css" href="calc.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calc.js"></script>
+</head>
+
+<body>
+
+    <div class="volver">
+        <a href="main.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home" width="50" height="50">
+        </a>
+    </div>
+
+    <div class="calculadora">
+
+        <div class="titulo">
+            <h1>Data-PB</h1>
+        </div>
+
+        <div class="subtitulo">
+            <h2>Calculadora Ley de Ohm</h2>
+        </div>
+
+        <input type="number" id="voltaje" placeholder="Voltaje (V)">
+
+        <input type="number" id="corriente" placeholder="Corriente (A)">
+
+        <input type="number" id="resistencia" placeholder="Resistencia (Ω)">
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div id="resultado"></div>
+
+    </div>
+
+</body>
+</html>

@@ -394,3 +394,88 @@ body{
     filter:
     drop-shadow(0 0 10px orange);
 }
+
+/* =====================================================
+   ================= VICTORY SCREEN ====================
+   ===================================================== */
+
+#victoryScreen{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(0,0,0,0.85);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+.victoryBox{
+
+    text-align:center;
+
+    background:#111;
+
+    border:5px solid gold;
+
+    padding:40px;
+
+    box-shadow:
+    0 0 40px gold;
+}
+
+#winnerText{
+
+    color:gold;
+
+    font-size:70px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 20px orange;
+}
+
+#rematchBtn,
+#characterSelectBtn{
+
+    display:block;
+
+    width:300px;
+
+    margin:15px auto;
+
+    padding:18px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffd700,
+        #ff9900
+    );
+
+    color:black;
+
+    transition:0.2s;
+}
+
+#rematchBtn:hover,
+#characterSelectBtn:hover{
+
+    transform:scale(1.05);
+}

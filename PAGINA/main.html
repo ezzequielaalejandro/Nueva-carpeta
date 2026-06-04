@@ -3,11 +3,31 @@
 <head>
     <title>Data-PB</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
 </head>
 
 <body>   
     
+    <div id="loader">
+
+    <div class="loader-bg"></div>
+
+    <div class="loader-content">
+
+        <h1 id="logo"></h1>
+
+        <div class="barra-container">
+            <div id="barra"></div>
+        </div>
+
+        <p id="porcentaje">0%</p>
+
+    </div>
+
+</div>
+
     <h1>
         <div class="titulo">
             <a>Data-PB</a>
@@ -71,6 +91,26 @@
                     
                 </li>
 
+                 <li class="dropdown">
+    
+                    <a href="#" class="alt">Herramientas</a>
+    
+                    <ul class="dropdown-content">
+    
+                        <li><a href="Blocnotas.html">Bloc de notas</a></li>
+                        <li><a href="calc.html">Calculadora ley de ohm</a></li>
+                        <li><a href="calcCap.html">Calculadora capacitores</a></li>
+
+                    </ul>
+                    
+                </li>
+                
+                <li class="alt">
+    
+                    <a href="index.html">Juego</a>
+                   
+                </li>
+                
                 <li class="alt">
     
                     <a href="login.html">Log-In</a>
@@ -130,6 +170,16 @@
     </p>
 </div>
 
+<div class="estrellas">
+    <span onclick="calificar(1)">★</span>
+    <span onclick="calificar(2)">★</span>
+    <span onclick="calificar(3)">★</span>
+    <span onclick="calificar(4)">★</span>
+    <span onclick="calificar(5)">★</span>
+</div>
+
+<p id="resultado">Sin calificación</p>
+
 <div class ="sponsors">
     <h2>
         Sponsors
@@ -170,5 +220,13 @@
                 <a>EL EMPERADOR</a>
                 <a>London is RED</a>
     </div>
+
+    <script>
+  window.addEventListener("load", function () {
+    let parrafo = document.getElementById("La pagina se cargo completamente");
+
+  });
+</script>
+
 </body>
 </html>

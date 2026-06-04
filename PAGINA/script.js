@@ -6,102 +6,22 @@ const characters = {
 
     Mr_Opams:{
         hp:100,
-        mana:100,
+        mana:60,
         speed:15,
         jump:8,
         punch:10,
         kick:15,
-        fireball:20
-    },
-
-    Cordero:{
-        hp:120,
-        mana:80,
-        speed:5,
-        jump:15,
-        punch:14,
-        kick:18,
-        fireball:16
+        fireball:10
     },
 
     Señor_P:{
-        hp:90,
-        mana:120,
+        hp:95,
+        mana:50,
         speed:10,
         jump:25,
         punch:15,
         kick:5,
         fireball:25
-    },
-
-    La_Mac:{
-        hp:110,
-        mana:100,
-        speed:6,
-        jump:17,
-        punch:12,
-        kick:16,
-        fireball:22
-    },
-
-    El_DT:{
-        hp:95,
-        mana:110,
-        speed:7,
-        jump:19,
-        punch:9,
-        kick:13,
-        fireball:24
-    },
-
-    liu:{
-        hp:100,
-        mana:100,
-        speed:7,
-        jump:18,
-        punch:11,
-        kick:17,
-        fireball:20
-    },
-
-    kano:{
-        hp:130,
-        mana:70,
-        speed:4,
-        jump:13,
-        punch:17,
-        kick:20,
-        fireball:14
-    },
-
-    jax:{
-        hp:140,
-        mana:60,
-        speed:4,
-        jump:12,
-        punch:20,
-        kick:22,
-        fireball:10
-    },
-
-    mileena:{
-        hp:90,
-        mana:120,
-        speed:8,
-        jump:21,
-        punch:8,
-        kick:14,
-        fireball:26
-    },
-
-    smoke:{
-        hp:100,
-        mana:100,
-        speed:7,
-        jump:18,
-        punch:10,
-        kick:16,
-        fireball:21
     }
 };
 
@@ -247,6 +167,16 @@ document.getElementById("startBtn").onclick = ()=>{
 
 function startGame(){
 
+    document.getElementById("rematchBtn").onclick = ()=>{
+
+    location.reload();
+};
+
+    document.getElementById("characterSelectBtn").onclick = ()=>{
+
+    location.reload();
+};
+
     const p1 = document.getElementById("player1");
     const p2 = document.getElementById("player2");
 
@@ -319,8 +249,10 @@ function startGame(){
 
             if(hp1 <= 0){
 
-                alert("PLAYER 2 WINS");
-            }
+    showVictoryScreen("PLAYER 2");
+
+    return;
+}
 
         }else{
 
@@ -336,8 +268,10 @@ function startGame(){
 
             if(hp2 <= 0){
 
-                alert("PLAYER 1 WINS");
-            }
+    showVictoryScreen("PLAYER 1");
+
+    return;
+}
         }
     }
 
@@ -357,8 +291,14 @@ function startGame(){
 
             if(distance < 180){
 
-                damage(2,stats1.punch);
-            }
+    damage(2,stats1.punch);
+
+    mana1 += 10;
+
+    if(mana1 > stats1.mana){
+        mana1 = stats1.mana;
+    }
+}
 
         }else{
 
@@ -366,10 +306,16 @@ function startGame(){
 
             setSprite(2,"punch");
 
-            if(distance < 180){
+           if(distance < 180){
 
-                damage(1,stats2.punch);
-            }
+    damage(1,stats2.punch);
+
+    mana2 += 10;
+
+    if(mana2 > stats2.mana){
+        mana2 = stats2.mana;
+    }
+}
         }
 
         setTimeout(()=>{
@@ -835,6 +781,22 @@ function fireball(attacker){
             }
         }
 
+        /* =========================================
+   ========= LIMITES DE PANTALLA ===========
+   ========================================= */
+
+const fighterWidth = 360;
+
+p1x = Math.max(
+    0,
+    Math.min(window.innerWidth - fighterWidth, p1x)
+);
+
+p2x = Math.max(
+    0,
+    Math.min(window.innerWidth - fighterWidth, p2x)
+);
+
         /* POSICIONES */
 
         p1.style.left = p1x + "px";
@@ -891,4 +853,18 @@ if(p1x < p2x){
     }
 
     loop();
+}
+
+function showVictoryScreen(winner){
+
+    const screen =
+    document.getElementById("victoryScreen");
+
+    const text =
+    document.getElementById("winnerText");
+
+    text.innerText =
+    winner + " WINS";
+
+    screen.style.display = "flex";
 }

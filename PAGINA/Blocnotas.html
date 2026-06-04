@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Bloc de Notas</title>
+    <link rel="stylesheet" type="text/css" href="blocnotas.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Botón flotante en la esquina -->
+    <div class="volver">
+        <a href="main.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home" width="50" height="50">
+        </a>
+    </div>
+
+    <!-- Contenedor centralizado verticalmente -->
+    <div class="contenedor-principal">
+        <div class="titulo">
+            <h1>Bloc de Notas</h1>
+        </div>
+
+        <div class="funcionamiento">
+            <textarea id="texto" placeholder="Escribe algo aquí..."></textarea>
+            <button onclick="guardar()">Guardar</button>
+        </div>
+    </div>
+    
+    <script>
+        function guardar() {
+            document.getElementById("texto").value = "";
+            alert("¡Guardado correctamente!");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

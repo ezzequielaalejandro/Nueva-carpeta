@@ -256,3 +256,168 @@ a:hover{
 
     box-shadow: 0 0 5px 6px red; /*box-shadow: desplazamientoX desplazamientoY desenfoque expansion color;*/
 }
+
+.estrellas{
+    text-align:center;
+    font-size:50px;
+    cursor:pointer;
+}
+
+.estrellas span{
+    color:gray;
+    transition:0.2s;
+}
+
+.estrellas span:hover{
+    transform:scale(1.2);
+}
+
+.activa{
+    color:gold;
+}
+
+#resultado{
+color:rgb(0, 0, 0);
+    font-size:15px;
+    font-family:'Orbitron', sans-serif;
+    font-weight: bold;
+    letter-spacing:2px;
+
+    text-align: center;
+
+    background-color:rgba(0, 217, 255, 0.918);
+
+    margin-left: 450px;
+    margin-right:450px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border-radius: 155px;
+}
+
+/* ===== PANTALLA DE CARGA ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+#loader{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#030712;
+
+    overflow:hidden;
+
+    z-index:999999;
+
+    transition:all 1.5s ease;
+}
+
+/* Fondo futurista */
+
+.loader-bg{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(circle at 20% 20%, #00d9ff55, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8a2eff55, transparent 30%),
+        linear-gradient(135deg,#050816,#0d1227);
+
+    animation:fondoMover 8s linear infinite;
+}
+
+@keyframes fondoMover{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+
+/* Contenido */
+
+.loader-content{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+}
+
+/* Logo */
+
+#logo{
+    color:#fff;
+
+    font-size:6rem;
+    letter-spacing:8px;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        0 0 10px #00e1ff,
+        0 0 30px #00e1ff,
+        0 0 60px #00e1ff,
+        0 0 100px #00e1ff;
+
+    min-height:120px;
+}
+
+/* Barra */
+
+.barra-container{
+    width:500px;
+    max-width:80vw;
+
+    height:18px;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 15px rgba(0,225,255,.2);
+}
+
+#barra{
+    width:0%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #00d9ff,
+        #00ffcc,
+        #8a2eff
+    );
+
+    box-shadow:
+        0 0 15px #00e1ff,
+        0 0 40px #00e1ff;
+}
+
+#porcentaje{
+    margin-top:20px;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    letter-spacing:3px;
+}
+
+/* Desaparición futurista */
+
+.loader-finish{
+    opacity:0;
+    transform:scale(1.15);
+    filter:blur(20px);
+    pointer-events:none;
+}
